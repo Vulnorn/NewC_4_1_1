@@ -27,6 +27,7 @@
                 userInput = Console.ReadLine();
             }
             while (TryGetInputValue(userInput, out numder));
+
             return true;
         }
 
