@@ -13,9 +13,10 @@
             Console.WriteLine($"Число - {number}");
         }
 
-        public static int GetNumber(int enterNumber = 0)
+        public static int GetNumber()
         {
             bool isEnterNumber = true;
+            int enterNumber=0;
 
             while (isEnterNumber)
             {
