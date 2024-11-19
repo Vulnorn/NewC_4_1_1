@@ -2,22 +2,35 @@
 {
     static void Main(string[] args)
     {
-        bool isEnterNumber = true;
-
-        while (isEnterNumber)
-        {
-            Console.WriteLine($"Введите число.");
-
-            if (Utilite.TryGetNumber(out int number) == true)
-            {
-                Console.WriteLine($"Число - {number}");
-                isEnterNumber = false;
-            }          
-        }
+        Utilite.ShowReceivedNumber();
     }
 
     class Utilite
     {
+        public static void ShowReceivedNumber()
+        {
+            int number = GetNumber();
+            Console.WriteLine($"Число - {number}");
+        }
+
+        public static int GetNumber(int enterNumber = 0)
+        {
+            bool isEnterNumber = true;
+
+            while (isEnterNumber)
+            {
+                Console.WriteLine($"Введите число.");
+
+                if (TryGetNumber(out int number) == true)
+                {
+                    isEnterNumber = false;
+                    enterNumber = number;
+                }
+            }
+
+            return enterNumber;
+        }
+
         public static bool TryGetNumber(out int numder)
         {
             string userInput;
